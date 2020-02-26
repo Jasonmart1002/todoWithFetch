@@ -11,3 +11,36 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+body{
+    background-image: url(https://wallpaperplay.com/walls/full/b/3/f/68323.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    font-size: 50px;
+    font-family: 'Indie Flower', ;
+    color: rgba(255, 255, 255, 0.904);
+    margin: 0px;
+}
+
+.Input{
+    font-size: 20px;
+    font-family: 'Indie Flower', ;
+    padding: 5px 5px 0px 5px;
+    color: rgba(255, 255, 255, 0.904);
+    background-color: rgba(255, 255, 255, 0);
+    margin: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.377);
+}
+
+.list-group-item{
+    font-size: 35px;
+    font-family: 'Indie Flower', ;
+    padding: 5px 5px 0px 5px;
+    color: rgba(255, 255, 255, 0.904);
+    background-color: rgba(255, 255, 255, 0);
+}
