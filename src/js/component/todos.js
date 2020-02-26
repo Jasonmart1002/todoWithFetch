@@ -16,6 +16,7 @@ export function Todos() {
 				<div className="col">
 					<h1>TODO list</h1>
 					<input
+						placeholder="Add a task"
 						className="Input"
 						onKeyUp={e =>
 							e.keyCode === 13 &&
