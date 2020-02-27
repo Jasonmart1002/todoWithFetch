@@ -12,35 +12,37 @@
 
 */
 
+$textcolor: rgba(50, 50, 50, 0.904);;
+$bgcolor: rgb(235, 235, 235);
+$fonts: 'Indie Flower', ;
+
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
 body{
-    background-image: url(https://wallpaperplay.com/walls/full/b/3/f/68323.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: $bgcolor;
 }
 
 h1{
     font-size: 50px;
-    font-family: 'Indie Flower', ;
-    color: rgba(255, 255, 255, 0.904);
+    font-family: $fonts;
+    color: $textcolor;
     margin: 0px;
 }
 
 .Input{
     font-size: 20px;
-    font-family: 'Indie Flower', ;
+    font-family: $fonts;
     padding: 5px 5px 0px 5px;
-    color: rgba(255, 255, 255, 0.904);
-    background-color: rgba(255, 255, 255, 0);
+    color: $textcolor;
+    background-color: $bgcolor;
     margin: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.377);
+    border: 1px solid $bgcolor;
 }
 
 .list-group-item{
     font-size: 35px;
-    font-family: 'Indie Flower', ;
+    font-family: $fonts;
     padding: 5px 5px 0px 5px;
-    color: rgba(255, 255, 255, 0.904);
-    background-color: rgba(255, 255, 255, 0);
+    color: $textcolor;
+    background-color: $bgcolor;
 }
