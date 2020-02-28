@@ -15,6 +15,7 @@
 $textcolor: rgba(50, 50, 50, 0.904);;
 $bgcolor: rgb(235, 235, 235);
 $fonts: 'Indie Flower', ;
+$gradient: linear-gradient(217deg, rgba(0,255,59,1) 0%, rgba(0,203,255,1) 100%);
 
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
@@ -34,7 +35,8 @@ h1{
     font-family: $fonts;
     padding: 5px 5px 0px 5px;
     color: $textcolor;
-    background-color: $bgcolor;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none!important;
     margin: 15px;
     border: 1px solid $bgcolor;
 }
@@ -44,5 +46,17 @@ h1{
     font-family: $fonts;
     padding: 5px 5px 0px 5px;
     color: $textcolor;
-    background-color: $bgcolor;
+    background-color: transparent;
+    border: none;
+}
+
+.list-group-item:hover{
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.col {
+    background: $gradient;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 10px;
 }

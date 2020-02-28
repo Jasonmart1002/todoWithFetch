@@ -2,18 +2,30 @@ import React, { useState, useEffect } from "react";
 export function Todos() {
 	const [tasks, setTasks] = useState([]);
 	const [value, setValue] = useState("");
-	// const deleteLabel = ind => {
-	// 	const newTasks = [...tasks];
-	// 	newTasks.splice(ind, 1);
-	// 	setTasks(newTasks);
-	// 	console.log(newTasks);
-	// };
+
 	const onValueChange = ({ target: { value } }) => {
 		setValue(value);
 	};
 	const update = e => {
 		e.preventDefault();
 		setValue("");
+	};
+
+	const pMethod = i => {
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/Jason", {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(i)
+		})
+			.then(response => response.json())
+			.then(i => {
+				console.log("Success:", i);
+			})
+			.catch(error => {
+				console.error("Error:", error);
+			});
 	};
 
 	useEffect(() => {
@@ -31,50 +43,17 @@ export function Todos() {
 			}
 		];
 
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/Jason", {
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(data)
-		})
-			.then(response => response.json())
-			.then(data => {
-				console.log("Success:", data);
-			})
-			.catch(error => {
-				console.error("Error:", error);
-			});
+		pMethod(data);
 	};
 
 	const deleteLabel = val => {
 		const newTasks = [...tasks];
 		newTasks.splice(val, 1);
 		setTasks(newTasks);
-		console.log(newTasks);
 
-		const data = [
-			...tasks,
-			{
-				label: val,
-				done: false
-			}
-		];
+		const data = [...newTasks];
 
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/Jason", {
-			method: "DELETE",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(data)
-		})
-			.then(response => response.json())
-			.then(data => {
-				console.log("Success:", data);
-			})
-			.catch(error => {
-				console.error("Error:", error);
-			});
+		pMethod(data);
 	};
 
 	return (
@@ -89,13 +68,7 @@ export function Todos() {
 							placeholder="Add a task"
 							className="Input"
 							onKeyDown={e =>
-								e.keyCode === 13 &&
-								// setTasks(
-								// 	tasks.concat({
-								// 		label: e.target.value
-								// 	})
-								// )
-								inputHandle(e.target.value)
+								e.keyCode === 13 && inputHandle(e.target.value)
 							}
 						/>
 					</form>
